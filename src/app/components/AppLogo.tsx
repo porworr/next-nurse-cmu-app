@@ -1,13 +1,19 @@
 "use client"
 
-export default function AppLogo() {
+type AppLogoProps = {
+    title: string;
+    isBold?: boolean;
+}
+export default function AppLogo({title, isBold}: AppLogoProps) {
     const handleClickMe = () => {
         alert("Hello click event");
     }
     return (
-        <p>
-          App Logo
+        <div>
+            {
+                isBold ? <p><strong>{title}</strong></p> : <p>{title}</p>
+            }
           <button onClick={handleClickMe}>Click me</button>
-        </p>
+        </div>
     )
 }

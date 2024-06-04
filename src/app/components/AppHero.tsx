@@ -22,7 +22,7 @@ export default function AppHero() {
         isShow && <h1>{title}</h1>
     }
     {
-        isShow && <AppLogo />
+        isShow && <AppLogo title="Hello Logo" />
     }
     {
         isShow ? <p>true</p> : <p>false</p>
