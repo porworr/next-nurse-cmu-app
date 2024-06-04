@@ -1,14 +1,11 @@
-import AppHero from "./components/AppHero";
 import AppLogo from "./components/AppLogo";
-
+import styles from "./page.module.css";
 export default function Home() {
   return (
     <main>
-      <AppLogo title="Hello Logo" isBold={true} />
-      {/* <AppLogo title="Hello Logo1" isBold />
-      <AppLogo title="Hello Logo2" /> */}
-      <hr />
-      {/* <AppHero /> */}
+      <h3 className="title">Hello World</h3>
+      <p className={styles.title}>Home Page</p>
+      <AppLogo title="Hello Logo" isBold/>
     </main>
   );
 }

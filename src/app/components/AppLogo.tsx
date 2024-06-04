@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
+import styles from "./AppLogo.module.css";
 type AppLogoProps = {
     title: string;
     isBold?: boolean;
@@ -27,7 +28,7 @@ export default function AppLogo({title, isBold}: AppLogoProps) {
         // alert("Hello use effect");
     return (
         <div>
-            <h3>{department}</h3>
+            <h3 className={styles.title}>{department}</h3>
             {
                 isBold ? <p><strong>{title}</strong></p> : <p>{title}</p>
             }
