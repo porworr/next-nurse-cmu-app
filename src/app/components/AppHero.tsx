@@ -12,7 +12,7 @@ export default function AppHero() {
 
   return (
     <>
-    <h1 style={{color: "#7D3C98", backgroundColor: "#D2B4DE",textAlign: "center",fontSize: "30"}}>tudents list</h1>
+    <h1 style={{color: "#7D3C98", backgroundColor: "#D2B4DE",textAlign: "center",fontSize: "30"}}>Students list</h1>
     {
         students.map((item, index) => {
             return (<div key={item.id}> index = {index} id = {item.id} name: {item.fullname}</div>)
