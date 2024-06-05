@@ -29,6 +29,7 @@ export default function AppLogo({title, isBold}: AppLogoProps) {
     return (
         <div>
             <h3 className={styles.title}>{department}</h3>
+            <p>{process.env.NEXT_PUBLIC_APP_NAME}</p>
             {
                 isBold ? <p><strong>{title}</strong></p> : <p>{title}</p>
             }

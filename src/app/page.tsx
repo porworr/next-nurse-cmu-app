@@ -1,11 +1,17 @@
-import AppLogo from "./components/AppLogo";
+import AppLogo from "@/app/components/AppLogo";
 import styles from "./page.module.css";
 export default function Home() {
+  const appPassword = process.env.APP_PASSWORD
   return (
     <main>
-      <h3 className="title">Hello World</h3>
-      <p className={styles.title}>Home Page</p>
       <AppLogo title="Hello Logo" isBold/>
+      <h3 className="title">
+        {process.env.APP_NAME}
+      </h3>
+      {
+        appPassword === "123456" && <p>OK!</p>
+      }
+      <p className={styles.title}>Home Page</p>
     </main>
   );
 }
