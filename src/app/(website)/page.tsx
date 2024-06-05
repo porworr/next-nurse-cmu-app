@@ -1,4 +1,4 @@
-import AppLogo from "@/app/components/AppLogo";
+import AppLogo from "@/app/(website)/components/AppLogo";
 import styles from "./page.module.css";
 import Link from "next/link";
 export default function Home() {
@@ -17,7 +17,10 @@ export default function Home() {
         <Link href="/about">About Page</Link>
       </div>
       <div>
-        <Link href={{pathname: "/contact"}}>Contact Page</Link>
+        <Link href={{pathname: "/contact"}} prefetch={false}>Contact Page</Link>
+      </div>
+      <div>
+        <Link href="/dashboard">Dashboard Page</Link>
       </div>
     </main>
   );
