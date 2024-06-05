@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kanit,K2D } from "next/font/google";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const kanit = Kanit({
+  weight: ["200", "300", "400", "500", "600"],
+  subsets: ["thai"],
+});
+
+const k2d = K2D({
+  weight: ["200", "300", "400", "500", "600"],
+  subsets: ["thai"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +24,8 @@ export default function WebsiteRootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <h1>Header</h1>
+      <body className={kanit.className}>
+        <h1 className={k2d.className}>Header</h1>
         <hr />
         {children}
       </body>
