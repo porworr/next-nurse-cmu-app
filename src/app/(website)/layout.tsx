@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import { Kanit,K2D } from "next/font/google";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import "../globals.css";
+import { ThemeProvider, Typography } from "@mui/material";
+import theme from "../theme";
 
-const kanit = Kanit({
-  weight: ["200", "300", "400", "500", "600"],
-  subsets: ["thai"],
-});
-
-const k2d = K2D({
-  weight: ["200", "300", "400", "500", "600"],
-  subsets: ["thai"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,11 +17,13 @@ export default function WebsiteRootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={kanit.className}>
+      <body>
         <AppRouterCacheProvider>
-        <h1 className={k2d.className}>Header</h1>
-        <hr />
-        {children}
+          <ThemeProvider theme={theme}>
+            <Typography variant="h1">Header</Typography>
+            <hr />
+            {children}
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
