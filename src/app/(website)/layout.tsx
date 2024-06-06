@@ -3,6 +3,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import "../globals.css";
 import { ThemeProvider, Typography } from "@mui/material";
 import theme from "../theme";
+import AppHeader from "./components/AppHeader";
+import AppFooter from "./components/AppFooter";
 
 
 export const metadata: Metadata = {
@@ -20,9 +22,9 @@ export default function WebsiteRootLayout({
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Typography variant="h1">Header</Typography>
-            <hr />
+            <AppHeader />
             {children}
+            <AppFooter />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
