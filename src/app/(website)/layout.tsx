@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Kanit,K2D } from "next/font/google";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import "../globals.css";
 
 const kanit = Kanit({
@@ -25,9 +26,11 @@ export default function WebsiteRootLayout({
   return (
     <html lang="en">
       <body className={kanit.className}>
+        <AppRouterCacheProvider>
         <h1 className={k2d.className}>Header</h1>
         <hr />
         {children}
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
