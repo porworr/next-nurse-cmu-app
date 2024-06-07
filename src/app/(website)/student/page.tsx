@@ -4,8 +4,13 @@ import Container from "@mui/material/Container";
 
 export default async function StudentPage() {
   const students = await prisma.students.findMany({
-    // include: { Departments: true },
-    include: { Department: { select: { Name: true} } },
+    // include: { Departments: true }, // เลือกทั้งหมดเลย
+    include: { Department: { select: { Name: true} } }, // เลือกตาราง students แต่ในตาราง Department จะเลือกเฉพาะ Name
+    // select: { 
+    //   Id: true, 
+    //   fname: true, 
+    //   Department: { select: { Name: true } } 
+    // }, // join เหมือนเดิมแต่ไม่ได้ใช้ include เลือกมาแสดงตรงๆได้เลยว่าจะแสดงข้อมูลไหนบ้าง
     orderBy: { Id: "desc" }
   });
 
