@@ -20,3 +20,11 @@ model Department {
   Name     String     @db.NVarChar(Max)
   Students Students[]
 }
+
+model Users {
+  Id           Int      @id(map: "PK_Users") @default(autoincrement())
+  Email       String      @unique
+  Password    String?     @db.NVarChar(Max)
+  Firstname    String?     @db.NVarChar(Max)
+  Lastname    String?     @db.NVarChar(Max)
+}

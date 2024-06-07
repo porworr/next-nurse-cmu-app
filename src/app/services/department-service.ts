@@ -4,7 +4,7 @@ import { Prisma } from "@prisma/client";
 // find all department
 export async function findAllDepartment() {
     return await prisma.department.findMany({
-        orderBy: { Id: "desc" },
+        orderBy: { Id: "asc" },
     });
 }
 
@@ -14,7 +14,7 @@ export async function findAllWithPaginationDepartment(page = 0, pageSize = 3) {
     return await prisma.department.findMany({
         skip: (page - 1) * pageSize,
         take: pageSize,
-        orderBy: { Id: "desc" },
+        orderBy: { Id: "asc" },
     });
 }
 
