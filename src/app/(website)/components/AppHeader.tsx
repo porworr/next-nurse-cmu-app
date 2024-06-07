@@ -115,16 +115,6 @@ export default function AppHeader() {
             >
               Student
             </Link>
-            <Link
-              underline={pathname == "/dashboard" ? "always" : "none"}
-              component={NextLink}
-              variant="button"
-              color="inherit"
-              href="/dashboard"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Dashboard
-            </Link>
             <Button
               LinkComponent={NextLink}
               href="/login"

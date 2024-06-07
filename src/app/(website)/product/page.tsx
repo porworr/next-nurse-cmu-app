@@ -11,7 +11,6 @@ export default async function ProductPage() {
     <Container>
       {
         res.data && (
-          <>
               <Grid container spacing={2} sx={{mt: 5}}>
                   {
                     res.data.map((item: any) => {
@@ -35,7 +34,6 @@ export default async function ProductPage() {
                     })
                   }
               </Grid>
-          </>
         )
       }
     </Container>
