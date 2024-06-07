@@ -8,15 +8,15 @@ datasource db {
 }
 
 model Students {
-  Id           BigInt      @id(map: "PK_Students") @default(autoincrement())
+  Id           Int      @id(map: "PK_Students") @default(autoincrement())
   fname        String      @db.NVarChar(Max)
   tel          String?     @db.NVarChar(50)
-  DepartmentID BigInt?
+  DepartmentID Int?
   Department   Department? @relation(fields: [DepartmentID], references: [Id], onDelete: NoAction, onUpdate: NoAction, map: "FK_Students_Department")
 }
 
 model Department {
-  Id       BigInt     @id(map: "PK_Department") @default(autoincrement())
+  Id       Int     @id(map: "PK_Department") @default(autoincrement())
   Name     String     @db.NVarChar(Max)
   Students Students[]
 }
