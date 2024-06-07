@@ -1,11 +1,19 @@
-import Link from "next/link";
+import { authOptions } from "@/app/api/auth/auth-options";
+import { Typography } from "@mui/material";
+import { getServerSession } from "next-auth";
+import LogoutButton from "./components/LogoutButton";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const session = await getServerSession(authOptions);
+
   return (
     <main>
-        <h1>Dashboard Page</h1>
-        <hr />
-        <Link href="/">Back to HomePage</Link>
+      {
+       session && (
+          <Typography>Welcome! {session.user?.name} {session.user?.email}</Typography>
+        ) 
+      }
+      <LogoutButton />
     </main>
   );
 }
