@@ -42,6 +42,7 @@ export async function updateDepartment(id: number, department: Prisma.Department
     return await prisma.department.update({
         where: { Id: id },
         data: department
+        // data: Name: department.Name // อัพเดตเฉพาะ Name
     });
 }
 
