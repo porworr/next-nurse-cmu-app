@@ -1,5 +1,5 @@
 import Container from "@mui/material/Container";
-import { getProducts } from "./services/product-services";
+import { getProducts } from "./service/product-service";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";

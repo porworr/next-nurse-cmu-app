@@ -1,9 +1,14 @@
+import { countAllDepartment, findAllDepartment } from "@/app/services/department-service";
 import { NextRequest, NextResponse } from "next/server";
 
 // http://localhost:3000/api/department
-export function GET() {
+export async function GET() {
+    const department = await findAllDepartment();
+    const countDepartment = await countAllDepartment();
+
     return NextResponse.json({ 
-        message: "department index" 
+        totalRecord: countDepartment,
+        data: department
     });
 }
 
